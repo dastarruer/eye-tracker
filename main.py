@@ -1,6 +1,7 @@
 from eyeGestures.utils import VideoCapture
 from eyeGestures import EyeGestures_v2
 
+from time import sleep
 
 class EyeTracker:
     def __init__(self):
@@ -24,6 +25,7 @@ class EyeTracker:
 
         if event:
             return(event.point[0], event.point[1])
+        return None
 
 
 if __name__ == "__main__":
@@ -31,5 +33,6 @@ if __name__ == "__main__":
 
     while True:
         print(eye_tracker.eye_position())
+        sleep(0.1)
 
 
