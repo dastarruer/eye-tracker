@@ -1,0 +1,7 @@
+services:
+  eye-tracker:
+    build: .
+    # Give container access to webcam
+    # User needs to be in `video` group
+    devices:
+      - /dev/video0:/dev/video0
