@@ -1,6 +1,4 @@
-eyeGestures
-
-# EyeGestures dependencies
-mediapipe
-scikit-learn
-opencv-python-headless # Specifically headless, since it does not come with a GUI and is therefore smaller
+dlib==19.24.4
+numpy==1.26.4
+opencv-python==4.10.0.82
+setuptools==78.1.1
