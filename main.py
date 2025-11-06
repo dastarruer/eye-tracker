@@ -48,4 +48,3 @@ if __name__ == "__main__":
 
     while True:
         print(eye_tracker.eye_position())
-        sleep(0.1)
