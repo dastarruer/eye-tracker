@@ -7,11 +7,11 @@ from time import sleep
 class EyeTracker:
     def __init__(self):
         # Initialize gesture engine and video capture
-        self._gestures = EyeGestures_v2()
-        self._cap = VideoCapture(0)
-        self._calibrate = True
-        self._screen_width = 1920
-        self._screen_height = 1080
+        self.gestures = EyeGestures_v2()
+        self.cap = VideoCapture(0)
+        self.calibrate = True
+        self.screen_width = 1920
+        self.screen_height = 1080
 
     def eye_position(self) -> tuple[int, int]:
         """
@@ -20,17 +20,17 @@ class EyeTracker:
 
         while True:
             try:
-                ret, frame = self._cap.read()
+                ret, frame = self.cap.read()
                 if not ret:
                     print("Failed to capture frame, retrying...")
                     sleep(0.1)
                     continue
 
-                event, cevent = self._gestures.step(
+                event, cevent = self.gestures.step(
                     frame,
-                    self._calibrate,
-                    self._screen_width,
-                    self._screen_height,
+                    self.calibrate,
+                    self.screen_width,
+                    self.screen_height,
                     context="my_context",
                 )
                 break
